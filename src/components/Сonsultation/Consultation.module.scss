@@ -1,0 +1,162 @@
+.container {
+    padding-top: 90px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 1fr;
+}
+
+.titleBlock {
+    & .title {
+        max-width: 360px;
+
+        font-size: 48px;
+        font-weight: 400;
+
+        margin-bottom: 30px;
+
+        & span {
+            font-weight: 900;
+        }
+    }
+}
+
+.postTitle {
+    max-width: 275px;
+
+    font-family: "Montserrat";
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.info {
+    grid-column: 3/4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    max-width: 310px;
+
+    & .title {
+        margin-bottom: 40px;
+
+        text-align: right;
+        font-size: 18px;
+        font-weight: 500;
+
+        & span {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.9px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.gifts {
+    display: grid;
+    grid-template-columns: minmax(136px, auto) auto;
+    grid-template-rows: repeat(2, auto);
+    gap: 30px;
+
+    text-align: right;
+
+    margin-bottom: 61px;
+}
+
+.name {
+    margin-bottom: 6px;
+
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+}
+
+.description {
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 400;
+}
+
+@media(max-width:780px) {
+    .container {
+        padding: 40px 15px 60px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 45px;
+    }
+
+    .info {
+        grid-column: 1/2;
+
+        & .title {
+            text-align: start;
+            margin-bottom: 20px;
+        }
+    }
+
+    .titleBlock {
+        & .title {
+            margin-bottom: 15px;
+
+            font-size: 36px;
+
+            & span {
+                font-weight: 900;
+            }
+        }
+    }
+
+    .gifts {
+        align-self: start;
+
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(2, auto);
+        row-gap: 15px;
+        column-gap: 25px;
+
+        margin-bottom: 0;
+        padding-left: 15px;
+    }
+
+    .name {
+        position: relative;
+
+        text-align: start;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 0.65px;
+        text-transform: uppercase;
+
+        &::before{
+            content: "";
+            display: block;
+
+            position: absolute;
+            top: 6px;
+            left: -15px;
+
+            
+            width: 10px;
+            height: 1px;
+
+            background: linear-gradient(90deg, #FCB045 36.99%, #FD1D1D 100%);
+        }
+    }
+
+    .description {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        visibility: hidden;
+        opacity: 0;
+    }
+}

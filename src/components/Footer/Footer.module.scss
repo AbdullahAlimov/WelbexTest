@@ -1,0 +1,168 @@
+.container {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    row-gap: 23px;
+
+    margin-bottom: 20px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact,
+.menu {
+    margin-left: 10px;
+}
+
+.menu {
+    & .list {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(5, auto);
+        column-gap: 52px;
+    }
+}
+
+.contact {
+    width: 342px;
+
+    text-align: end;
+
+    & .list {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+        & li {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+address{
+    font-style: normal;
+}
+
+.iconGroup {
+    display: flex;
+
+    & li {
+        width: 24px;
+        height: 24px;
+
+        padding: 2px;
+
+        margin-left: 10px;
+
+        & a {
+            background-color: #ffffff00;
+        }
+    }
+
+    & :first-child {
+        margin-left: 0;
+    }
+}
+
+.title {
+    color: #656566;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+}
+
+.list {
+    font-size: 16px;
+    font-weight: 400;
+
+    & li {
+        margin-bottom: 10px;
+    }
+}
+
+.telNumber {
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.copyright {
+    justify-self: end;
+    text-align: end;
+
+    width: fit-content;
+
+    & p {
+        margin-bottom: 5px;
+    }
+}
+
+@media(max-width:780px) {
+    .container {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+        row-gap: 0px;
+
+        padding: 45px 15px 60px;
+
+        background-color: #0E1014;
+    }
+
+    .info {
+        flex-direction: column;
+    }
+
+    .contact,
+    .menu,
+    .aboutCompany {
+        width: fit-content;
+        margin: 0 0 30px;
+    }
+
+    .contact {
+        text-align: start;
+
+        & .list {
+            align-items: start;
+        }
+    }
+
+    .copyright {
+        justify-self: start;
+        text-align: start;
+
+        & p {
+            margin-bottom: 0;
+        }
+
+        ;
+    }
+}
+
+@media(max-width:420px) {
+    .title {
+        font-size: 12px;
+    }
+
+    .list {
+        font-size: 14px;
+    }
+
+    .menu .list {
+        grid-template-columns: repeat(2, min-content);
+        grid-template-rows: repeat(5, auto);
+        column-gap: 40px;
+    }
+    
+    .copyright{
+        font-size: 12px;
+    }
+}
